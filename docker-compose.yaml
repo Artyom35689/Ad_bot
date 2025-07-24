@@ -1,0 +1,23 @@
+services:
+  tg-ad-bot:
+    stdin_open: true
+    tty: true
+    working_dir: /home/ws
+    command: 
+      - python /home/ws/bot.py
+    build: .
+    container_name: tg-ad-exchange-bot
+    restart: unless-stopped
+    # Важное добавление: монтируем текущую директорию хоста
+    volumes:
+      - .:/home/ws  # Синхронизация всего проекта
+
+  terminal:
+    build: .
+    stdin_open: true
+    tty: true
+    working_dir: /home/ws
+    command: []
+    # Аналогичная синхронизация для терминала
+    volumes:
+      - .:/home/ws
