@@ -442,7 +442,7 @@ async def button_handler(update, context):
 
 def main():
     """Запуск бота"""
-    application = Application.builder().token("8079968259:AAEJ2t9qNYhxhOgVGUZIO5Z6S0yI9SEKmb8").build()
+    application = Application.builder().token("TOKEN").build()
     
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
